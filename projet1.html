@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet interactif</title>
+    <style>
+        /* Styles CSS internes */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:url(R.jpeg) ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .buttons {
+            display: flex;
+            /* Affichage des boutons horizontalement */
+            flex-direction: row;
+            align-items: center;
+            /* Espacement entre les boutons */
+            gap: 10px;
+        }
+
+        .button {
+            /* Marge supérieure et inférieure nulle */
+            margin: 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenu de la page -->
+    <div class="buttons">
+        <!-- Boutons de navigation -->
+        <button onclick="window.location.href='index2.html'" class="button">Formulaire de Contact</button>
+        <button onclick="window.location.href='index3.html'" class="button">Vidéo de Présentation</button>
+        <button onclick="window.location.href='index4.html'" class="button">Photos</button>
+        <button onclick="window.location.href='index5.html'" class="button">CV</button>
+        <button onclick="window.location.href='index6.html'" class="button">Jeu</button>
+    </div>
+
+    <!-- Script externe -->
+
+</body>
+</html>

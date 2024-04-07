@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de présentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .video-container {
+            display: none;
+            text-align: center;
+        }
+
+        iframe {
+            max-width: 100%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <button id="videoButton" class="button">Vidéo de Présentation</button>
+        </div>
+
+        <div id="videoContainer" class="video-container">
+            <iframe width="560" height="315" src="escargots.mp4" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    <script>
+        const videoButton = document.getElementById('videoButton');
+        const videoContainer = document.getElementById('videoContainer');
+
+        videoButton.addEventListener('click', () => {
+            videoContainer.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

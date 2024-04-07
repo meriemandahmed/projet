@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Devinez le Nombre</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            background-image: url('OIP.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover; /* ou background-size: contain; selon vos préférences */
+            background-position: center; /* ou ajustez la position selon vos besoins */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+        .guess-game {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #checkButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #checkButton:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="guess-game">
+        <h2>Jeu de Devinez le Nombre</h2>
+        <input type="text" id="userGuess" placeholder="Entrez votre proposition">
+        <br>
+        <button id="checkButton">Vérifier</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        const userGuessInput = document.getElementById('userGuess');
+        const checkButton = document.getElementById('checkButton');
+        const resultDisplay = document.getElementById('result');
+
+        checkButton.addEventListener('click', () => {
+            const userGuess = parseInt(userGuessInput.value);
+            if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+                resultDisplay.textContent = 'Veuillez entrer un nombre entre 1 et 100.';
+            } else if (userGuess === randomNumber) {
+                resultDisplay.textContent = 'Bravo! Vous avez deviné le nombre correctement.';
+            } else if (userGuess < randomNumber) {
+                resultDisplay.textContent = 'Le nombre est trop petit.';
+            } else {
+                resultDisplay.textContent = 'Le nombre est trop grand.';
+            }
+        });
+    </script>
+</body>
+</html>
