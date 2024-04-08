@@ -4,58 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet interactif</title>
-    <style>
-        /* Styles CSS internes */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image:url(R.jpeg) ;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .buttons {
-            display: flex;
-            /* Affichage des boutons horizontalement */
-            flex-direction: row;
-            align-items: center;
-            /* Espacement entre les boutons */
-            gap: 10px;
-        }
-
-        .button {
-            /* Marge supérieure et inférieure nulle */
-            margin: 0;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="projet.css">
 </head>
 <body>
-    <!-- Contenu de la page -->
+
     <div class="buttons">
-        <!-- Boutons de navigation -->
-        <button onclick="window.location.href='index2.html'" class="button">Formulaire de Contact</button>
-        <button onclick="window.location.href='index3.html'" class="button">Vidéo de Présentation</button>
-        <button onclick="window.location.href='index4.html'" class="button">Photos</button>
-        <button onclick="window.location.href='index5.html'" class="button">CV</button>
-        <button onclick="window.location.href='index6.html'" class="button">Jeu</button>
+        <button id="contactButton" class="button">Formulaire de Contact</button>
+        <button id="videoButton" class="button">Vidéo de Présentation</button>
+        <button id="photoButton" class="button">Photos</button>
+        <button id="cvButton" class="button">CV</button>
     </div>
 
-    <!-- Script externe -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" id="closeButton">&times;</span>
+            <h2>Formulaire de Contact</h2>
+            <form id="contactForm">
+                <label for="name">Nom :</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email :</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="message">Message :</label><br>
+                <textarea id="message" name="message" rows="4"></textarea><br>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
 
+    <div id="videoContainer" class="video-container">
+        <iframe width="560" height="315" src="escargots.mp4" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div id="photoContainer" class="photo-container">
+        <img src="ma_photo.jpg" alt="Photo de vous et de votre binôme">
+    </div>
+
+    <div id="cvContainer" class="cv-container">
+        <img src="CV.jpeg" alt="">
+    </div>
+    <script src="projet.js"></script>
 </body>
 </html>
